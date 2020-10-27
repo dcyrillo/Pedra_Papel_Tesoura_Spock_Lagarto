@@ -101,6 +101,28 @@ public class MainActivity extends AppCompatActivity {
     private void atualizaStatus(){
         progressBarComputador.setProgress(pontosComputador);
         progressBarHumano.setProgress(pontosHumano);
+
+        if(pontosHumano<15 && pontosComputador<15){
+            textViewStatus.setText("Escolha uma opção...");
+        }
+        else{
+            if(pontosHumano>=15&& pontosComputador<15){
+                textViewStatus.setText("O humano venceu o torneio");
+                iniciaTorneio();
+            }
+            else if(pontosHumano<15&& pontosComputador>=15){
+                textViewStatus.setText("O computador venceu o torneio");
+                iniciaTorneio();
+            }
+            else{
+                textViewStatus.setText("O torneio empatou");
+                iniciaTorneio();
+            }
+        }
     }
 
+    private  void iniciaTorneio(){
+        pontosHumano=0;
+        pontosComputador=0;
+    }
 }
