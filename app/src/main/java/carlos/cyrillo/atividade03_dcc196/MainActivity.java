@@ -1,8 +1,10 @@
 package carlos.cyrillo.atividade03_dcc196;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -130,5 +132,22 @@ public class MainActivity extends AppCompatActivity {
     private  void iniciaTorneio(){
         pontosHumano=0;
         pontosComputador=0;
+    }
+
+    public void textViewStatusClick(View view){
+        AlertDialog.Builder dialogBuilder =new AlertDialog.Builder(this);
+        dialogBuilder.setTitle("Reinicar torneio? ");
+        dialogBuilder.setMessage("Deseja reiniciar o torneio zerando o placar? ");
+       dialogBuilder.setPositiveButton("Reiniciar ", new DialogInterface.OnClickListener() {
+           @Override
+           public void onClick(DialogInterface dialogInterface, int i) {
+               iniciaTorneio();
+               atualizaStatus();
+           }
+       });
+        dialogBuilder.create();
+        dialogBuilder.show();
+
+
     }
 }
