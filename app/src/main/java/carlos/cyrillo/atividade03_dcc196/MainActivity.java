@@ -11,6 +11,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.os.Bundle;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     public enum Jogada{
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBarHumano;
     private TextView textViewStatus;
 
+    private Random dado= new Random();
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
         rodada(Jogada.PEDRA);
     }
 
-    public void rodada(Jogada jogada){}
+    public void rodada(Jogada jogada){
+        Jogada jogadaComputador = Jogada.values()[dado.nextInt(3)];
+
+    }
 
 }
