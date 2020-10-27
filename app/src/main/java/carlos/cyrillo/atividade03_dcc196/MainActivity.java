@@ -95,6 +95,12 @@ public class MainActivity extends AppCompatActivity {
                 pontosComputador++;
                 break;
         }
+        atualizaStatus();
+    }
+
+    private void atualizaStatus(){
+        progressBarComputador.setProgress(pontosComputador);
+        progressBarHumano.setProgress(pontosHumano);
     }
 
 }
