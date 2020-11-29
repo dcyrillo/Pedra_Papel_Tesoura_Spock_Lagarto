@@ -113,7 +113,7 @@
         android:layout_height="33dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:onClick="textViewStatusClick"
@@ -121,6 +121,30 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPapel" />
+
+    <Button
+        android:id="@+id/Lagarto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="52dp"
+        android:onClick="buttonLagartoClick"
+        android:text="Lagarto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPapel" />
+
+    <Button
+        android:id="@+id/Spock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="52dp"
+        android:onClick="buttonSpockClick"
+        android:text="Spock"
+        app:layout_constraintStart_toEndOf="@+id/Lagarto"
         app:layout_constraintTop_toBottomOf="@+id/buttonPapel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

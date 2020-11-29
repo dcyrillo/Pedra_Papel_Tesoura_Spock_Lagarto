@@ -19,7 +19,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     public enum Jogada{
-        PEDRA(0), PAPEL(1), TESOURA(2);
+        PEDRA(0), PAPEL(1), TESOURA(2),SPOCK(3),LAGARTO(4);
         private final int valor;
 
         Jogada(int valor){
@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonPedra;
     private Button buttonPapel;
     private Button buttonTesoura;
+    private Button buttonLagarto;
+    private Button buttonSpock;
 
     private ProgressBar progressBarComputador;
     private ProgressBar progressBarHumano;
@@ -64,12 +66,24 @@ public class MainActivity extends AppCompatActivity {
         buttonPedra=findViewById(R.id.buttonPedra);
         buttonPapel=findViewById(R.id.buttonPapel);
         buttonTesoura=findViewById(R.id.buttonTesoura);
+        buttonSpock=findViewById(R.id.Lagarto);
+        buttonLagarto=findViewById(R.id.Spock);
+
+
 
         progressBarComputador=findViewById(R.id.progressBarComputador);
         progressBarHumano=findViewById(R.id.progressBarHumano);
         textViewStatus=findViewById(R.id.textViewStatus);
     }
 
+
+    public void buttonSpockClick(View view){
+        rodada(Jogada.SPOCK);
+    }
+
+    public void buttonLagartoClick(View view){
+        rodada(Jogada.LAGARTO);
+    }
 
     public void buttonTesouraClick(View view){
         rodada(Jogada.TESOURA);
